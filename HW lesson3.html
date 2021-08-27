@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset='utf-8'>
+  </head>
+
+
+    <script>
+      //1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100. 
+      var i = 2;
+      var primeArr = [ ];
+      while (i <= 100){
+        if (i==2 || i==3 || i==5 || i==7) {
+          primeArr.push(" " + i);
+          i++
+          continue;
+        }
+        else if (i % 2 == 0 || i % 3 == 0 || i % 5 == 0 || i % 7 == 0) {
+          i++;
+          continue;
+        }
+        primeArr.push(" " + i++);
+      }
+      console.log(primeArr);
+    </script>
+
+
+    <script>
+      //2+3. Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров. Товары в корзине хранятся в массиве. Задачи:
+         // a) Организовать такой массив для хранения товаров в корзине;
+         // b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+      function countBasketPrice() {
+        var basket = [
+        {
+        title: 'Товар-1',
+        price: 200,
+        count: 15
+        },
+        {
+        title: 'Товар-2',
+        price: 800,
+        count: 1
+        },
+        {
+        title: 'Товар-3',
+        price: 420,
+        count: 7
+        },
+        ];
+
+        var sum = 0;
+        var quantity = 0;
+        var name = 'В корзине находится товар следующих наименований: ';
+        for (var item of basket) {
+          sum += (item.price * item.count);
+          quantity += item.count;
+          name += '(' + item.title + ') ';
+        }
+        var q = basket.length;
+        console.log('Всего товаров в корзине: ' + q + '.' + name + '.' +
+          'Общее количество выбранных позиций товаров составляет, шт.: ' + quantity + '.' +
+          'Стоимость всех выбранных товаров в корзине составляет, руб.: ' + sum + '.');
+      }
+      countBasketPrice()
+    </script>
+
+        <script>
+      //4. *Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. Выглядеть это должно так:
+      var arr = [ ];
+      for (var i = 0; i <= 9; arr.push(i++)) { }
+      console.log(arr);
+    </script>
+
+    <script>
+      //5. *Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:
+      var i = 1
+      var x = " ";
+      while (i <= 20) {
+      i++;
+      console.log(x +='x' );
+      }
+    </script>
+
+
+  </body>
+</html>
+
